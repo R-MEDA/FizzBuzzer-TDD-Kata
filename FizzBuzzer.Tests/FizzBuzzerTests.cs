@@ -42,4 +42,18 @@ public class FizzBuzzerTest
 
         Assert.Equal("FizzBuzz", result);
     }
+
+    [Theory]
+    [InlineData(1)]
+    [InlineData(2)]
+    [InlineData(4)]
+    [InlineData(7)]
+    public void GivenNumberIsNeitherMultipleOThreeNorFive_WhenFizzBuzzerRuns_ThenReturnsFizzBuzz(int number)
+    {
+        FizzBuzzer fizzBuzzer = new FizzBuzzer();
+
+        string result = fizzBuzzer.FizzBuzz(number);
+
+        Assert.Equal(number.ToString(), result);
+    }
 }
