@@ -50,7 +50,7 @@
         [InlineData(2)]
         [InlineData(4)]
         [InlineData(7)]
-        public void GivenNumberIsNeitherMultipleOThreeNorFive_WhenFizzBuzzerRuns_ThenReturnsFizzBuzz(int number)
+        public void GivenNumberIsNeitherMultipleOThreeNorFive_WhenFizzBuzzerRuns_ThenReturnsStringifiedNumber(int number)
         {
             string result = fizzBuzzer.FizzBuzz(number);
 
