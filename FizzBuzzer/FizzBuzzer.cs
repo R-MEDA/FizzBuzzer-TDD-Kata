@@ -4,15 +4,18 @@ namespace FizzBuzzer
     {
         public string FizzBuzz(int number)
         {
-            if (number % 5 == 0 && number % 3 == 0)
+            var isDivisibleByFive = isDivisibleBy(5, number);
+            var isDivisibleByThree = isDivisibleBy(3, number);
+
+            if (isDivisibleByFive && isDivisibleByThree)
             {
                 return "FizzBuzz";
             }
-            else if (number % 5 == 0)
+            else if (isDivisibleByFive)
             {
                 return "Buzz";
             }
-            else if (number % 3 == 0)
+            else if (isDivisibleByThree)
             {
                 return "Fizz";
             }
@@ -21,5 +24,7 @@ namespace FizzBuzzer
                 return number.ToString();
             }
         }
+
+        private readonly Func<int, int, bool> isDivisibleBy = (number, numberUnderCheck) => numberUnderCheck % number == 0;
     }
 }
