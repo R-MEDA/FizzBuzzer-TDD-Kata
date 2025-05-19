@@ -1,30 +1,28 @@
+using System.Text;
+
 namespace FizzBuzzer
 {
     public class FizzBuzzer
     {
+        private readonly Dictionary<int, string> rules = new()
+        {
+            { 3, "Fizz" },
+            { 5, "Buzz" }
+        };
+
         public string FizzBuzz(int number)
         {
-            var result = "";
+            var result = new StringBuilder();
 
-            var isDivisibleByFive = isDivisibleBy(5, number);
-            var isDivisibleByThree = isDivisibleBy(3, number);
-
-            if (isDivisibleByThree)
+            foreach (var rule in rules)
             {
-                result += "Fizz";
-            }
-            if (isDivisibleByFive)
-            {
-                result += "Buzz";
-            }
-            else if(result == "")
-            {
-                result = number.ToString();
+                if (number % rule.Key == 0)
+                {
+                    result.Append(rule.Value);
+                }
             }
 
-            return result;
+            return result.Length > 0 ? result.ToString() : number.ToString();
         }
-
-        private readonly Func<int, int, bool> isDivisibleBy = (number, numberUnderCheck) => numberUnderCheck % number == 0;
     }
 }
