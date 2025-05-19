@@ -12,9 +12,13 @@ namespace FizzBuzzer
             {
                 return "Buzz";
             }
-            else
+            else if (number % 3 == 0)
             {
                 return "Fizz";
+            }
+            else
+            {
+                return number.ToString();
             }
         }
     }
