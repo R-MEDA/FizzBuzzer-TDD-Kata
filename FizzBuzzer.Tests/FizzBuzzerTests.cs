@@ -29,4 +29,18 @@ public class FizzBuzzerTest
 
         Assert.Equal("Buzz", result);
     }
+
+    [Theory]
+    [InlineData(15)]
+    [InlineData(30)]
+    [InlineData(45)]
+    [InlineData(90)]
+    public void GivenNumberIsMultipleOfBothThreeAndFive_WhenFizzBuzzerRuns_ThenReturnsFizzBuzz(int number)
+    {
+        FizzBuzzer fizzBuzzer = new FizzBuzzer();
+
+        string result = fizzBuzzer.FizzBuzz(number);
+
+        Assert.Equal("FizzBuzz", result);
+    }
 }
