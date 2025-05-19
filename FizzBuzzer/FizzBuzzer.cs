@@ -4,10 +4,16 @@ namespace FizzBuzzer
     {
         public string FizzBuzz(int number)
         {
-            if (number % 5 == 0)
+            if (number % 5 == 0 && number % 3 == 0)
+            {
+                return "FizzBuzz";
+            }
+            else if (number % 5 == 0)
             {
                 return "Buzz";
-            } else {
+            }
+            else
+            {
                 return "Fizz";
             }
         }
